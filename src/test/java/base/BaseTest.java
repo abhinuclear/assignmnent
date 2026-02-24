@@ -21,10 +21,7 @@ public class BaseTest {
         );
         page = context.newPage();
         page.navigate("https://casekaro.com/");
-        while (page.locator("button[aria-label='Remove item']").count() > 0) {
-            page.locator("button[aria-label='Remove item']").first().click();
-            page.waitForTimeout(1000);
-        }
+
     }
 
 
