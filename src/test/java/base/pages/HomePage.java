@@ -13,8 +13,13 @@ public class HomePage {
     }
 
     public void clickMobileCovers() {
-        page.locator("#HeaderMenu-mobile-covers-69").click();
-        page.waitForLoadState();
+        page.getByRole(AriaRole.LINK,
+            new Page.GetByRoleOptions()
+                    .setName("Mobile Cases & Covers")
+                    .setExact(true))
+            .click();
+
+    page.waitForLoadState();
     }
 
     public void searchAndSelectIphone16Pro() {
