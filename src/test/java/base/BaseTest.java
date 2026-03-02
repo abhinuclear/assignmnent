@@ -6,9 +6,9 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
-    protected static Playwright playwright;
-    protected static Browser browser;
-    protected static Page page;
+    protected Playwright playwright;
+    protected Browser browser;
+    protected Page page;
 
     @BeforeMethod
     public void setup() {
@@ -21,12 +21,16 @@ public class BaseTest {
         );
         page = context.newPage();
         page.navigate("https://casekaro.com/");
-
+        while (page.locator("button[aria-label='Remove item']").count() > 0) {
+            page.locator("button[aria-label='Remove item']").first().click();
+            page.waitForTimeout(1000);
+        }
     }
 
 
     @AfterMethod
     public void tearDown() {
+        page.waitForTimeout(3000);
         page.close();
         browser.close();
         playwright.close();
