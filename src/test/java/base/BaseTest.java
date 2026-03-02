@@ -6,9 +6,9 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
-    protected Playwright playwright;
-    protected Browser browser;
-    protected Page page;
+    protected static Playwright playwright;
+    protected static Browser browser;
+    protected static Page page;
 
     @BeforeMethod
     public void setup() {
@@ -27,7 +27,6 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        page.waitForTimeout(3000);
         page.close();
         browser.close();
         playwright.close();

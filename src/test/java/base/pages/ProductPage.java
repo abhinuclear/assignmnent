@@ -38,7 +38,7 @@ public class ProductPage {
         selectAndAdd("Glass");
     }
 
-    private void selectAndAdd(String material) {
+    public void selectAndAdd(String material) {
 
         Locator productModal = page.getByRole(AriaRole.DIALOG);
         productModal.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));

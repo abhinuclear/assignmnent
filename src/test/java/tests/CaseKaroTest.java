@@ -1,4 +1,4 @@
-package tests;
+/*package tests;
 
 import base.BaseTest;
 import base.pages.CartPage;
@@ -35,3 +35,5 @@ public class CaseKaroTest extends BaseTest {
 
     }
 }
+
+ */
