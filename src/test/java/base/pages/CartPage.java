@@ -14,7 +14,6 @@ public class CartPage {
 
     public void openCart() {
         page.locator("#cart-icon-bubble").click();
-        page.waitForTimeout(1500);
     }
 
     public void validateItems() {
