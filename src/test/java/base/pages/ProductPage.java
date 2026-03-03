@@ -53,7 +53,6 @@ public class ProductPage {
 
         productModal.getByText("Add to cart").click();
 
-        page.waitForTimeout(3000);
 
         page.locator("h2.drawer__heading").waitFor();
 
