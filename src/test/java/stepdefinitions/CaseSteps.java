@@ -1,12 +1,13 @@
 package stepdefinitions;
 
-import base.BaseTest;
 import base.pages.CartPage;
 import base.pages.HomePage;
 import base.pages.ProductPage;
 import io.cucumber.java.en.*;
 
-public class CaseSteps extends BaseTest {
+import static base.BaseTest.page;
+
+public class CaseSteps  {
 
     HomePage home;
     ProductPage product;
