@@ -24,12 +24,12 @@ public class BaseTest {
         while (page.locator("button[aria-label='Remove item']").count() > 0) {
             page.locator("button[aria-label='Remove item']").first().click();
         }
+
     }
 
 
     @AfterMethod
     public void tearDown() {
-        page.waitForTimeout(3000);
         page.close();
         browser.close();
         playwright.close();

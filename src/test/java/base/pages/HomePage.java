@@ -24,17 +24,6 @@ public class HomePage {
 
         page.getByPlaceholder("Search your phone model").fill("iPhone");
 
-    }
-    public void selectPhone(){
-        Locator model = page.getByRole(
-                AriaRole.LINK,
-                new Page.GetByRoleOptions()
-                        .setName("iPhone 16 Pro")
-                        .setExact(true)
-        );
-
-        model.waitFor();
-        model.click();
 
         String[] otherBrands = {"Samsung", "Vivo", "OnePlus", "Oppo", "Realme", "Redmi"};
         for (String brand : otherBrands) {
@@ -43,7 +32,17 @@ public class HomePage {
                     brand + " should not be visible"
             );
         }
+    }
+        public void selectPhone() {
+            Locator model = page.getByRole(
+                    AriaRole.LINK,
+                    new Page.GetByRoleOptions()
+                            .setName("iPhone 16 Pro")
+                            .setExact(true)
+            );
 
+            model.waitFor();
+            model.click();
+        }
 
     }
-}

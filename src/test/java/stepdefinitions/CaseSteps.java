@@ -4,7 +4,6 @@ import base.pages.CartPage;
 import base.pages.HomePage;
 import base.pages.ProductPage;
 import io.cucumber.java.en.*;
-
 import static base.BaseTest.page;
 
 public class CaseSteps  {
@@ -37,9 +36,14 @@ public class CaseSteps  {
         home.selectPhone();
     }
 
+    @And("I choose first item")
+    public void chooseItem(){
+        product.chooseFirstItem();
+    }
+
     @And("I add Hard material")
     public void addHardMaterial() {
-        product.chooseFirstItem();
+       // product.chooseFirstItem();
         product.addHard();
     }
 

@@ -15,7 +15,7 @@ public class ProductPage {
         this.page = page;
     }
 
-    public void validateFirstProductVisible() {
+    public void validateProductVisible() {
 
         Assert.assertTrue(page.locator(".card__heading").count() > 0);
     }
@@ -40,23 +40,23 @@ public class ProductPage {
 
     public void selectAndAdd(String material) {
 
-        Locator productModal = page.getByRole(AriaRole.DIALOG);
-        productModal.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
+        Locator productModel = page.getByRole(AriaRole.DIALOG);
+        productModel.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 
-        String inputId = productModal
+        String inputId = productModel
                 .locator("input[value='" + material + "']")
                 .first()
                 .getAttribute("id");
 
-        productModal.locator("label[for='" + inputId + "']").first().click();
+        productModel.locator("label[for='" + inputId + "']").first().click();
         page.waitForLoadState();
 
-        productModal.getByText("Add to cart").click();
+        productModel.getByText("Add to cart").click();
 
 
-        page.locator("h2.drawer__heading").waitFor();
+       page.locator("h2.drawer__heading").isVisible();
 
-        page.locator("button[aria-label='Close'], button:has-text('×')")
+        page.locator("button[aria-label='Close']")
                 .first()
                 .click();
 
