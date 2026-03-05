@@ -22,12 +22,19 @@ public class CaseSteps  {
 
     @When("I click on Mobile Covers")
     public void clickMobileCovers() {
+
         home.clickMobileCovers();
     }
 
-    @And("I search for iPhone 16 Pro")
+    @And("I search for iPhone")
     public void searchPhone() {
-        home.searchAndSelectIphone16Pro();
+
+        home.searchPhone();
+    }
+
+    @And("I select iPhone 16 pro")
+    public  void selectPhone(){
+        home.selectPhone();
     }
 
     @And("I add Hard material")
