@@ -20,11 +20,12 @@ public class HomePage {
                 .click();
     }
 
-    public void searchAndSelectIphone16Pro() {
+    public void searchPhone() {
 
         page.getByPlaceholder("Search your phone model").fill("iPhone");
 
-
+    }
+    public void selectPhone(){
         Locator model = page.getByRole(
                 AriaRole.LINK,
                 new Page.GetByRoleOptions()
